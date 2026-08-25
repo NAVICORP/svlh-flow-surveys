@@ -1,4 +1,4 @@
-/* Environmental Flow Surveys · St. Vrain Creek — interactions & motion */
+/* Environmental Flow Surveys · St. Vrain Creek, interactions & motion */
 (function () {
   'use strict';
 
@@ -156,7 +156,7 @@
   if (!reduce && hasIO) {
     document.documentElement.classList.add('js-reveal');
     var targets = document.querySelectorAll(
-      '.section__head, .eyebrow, .mapcard, .maprow > *, .ack, .cards > li, .refs, .gallery, .foot__inner > *'
+      '.section__head, .eyebrow, .mapcard, .maprow > *, .ack, .people > li, .cards > li, .refs, .gallery, .foot__inner > *'
     );
     targets.forEach(function (t) { if (!t.classList.contains('eyebrow')) t.classList.add('reveal'); });
 
@@ -165,7 +165,7 @@
         if (!entry.isIntersecting) return;
         var el = entry.target;
         var siblings = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
-        var delay = el.parentElement && el.parentElement.classList.contains('cards') ? siblings * 90 : 0;
+        var delay = el.parentElement && (el.parentElement.classList.contains('cards') || el.parentElement.classList.contains('people')) ? siblings * 90 : 0;
         setTimeout(function () { el.classList.add('is-in'); }, delay);
         revealIO.unobserve(el);
       });

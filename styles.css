@@ -506,3 +506,42 @@ section[id]{ scroll-margin-top:calc(var(--nav-h) + 16px); }
   .hero__glow,.hero__cta svg,.chip--wait::before{ animation:none !important; }
   *{ animation-duration:.01ms !important; transition-duration:.01ms !important; }
 }
+
+/* ── People (acknowledgements) ──────────────────────────── */
+.people{
+  list-style:none; margin:26px 0 0; padding:0;
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px;
+}
+@media (max-width:1000px){ .people{ grid-template-columns:1fr 1fr; } }
+@media (max-width:820px){ .people{ grid-template-columns:1fr; } }
+.person{
+  display:flex; gap:16px; align-items:flex-start; min-width:0;
+  background:var(--white); border:1px solid rgba(217,193,146,.6);
+  border-radius:var(--radius); padding:18px;
+  box-shadow:var(--shadow-s);
+  transition:transform .45s var(--ease-out), box-shadow .45s var(--ease-out), border-color .35s var(--ease);
+}
+.person:hover{ transform:translateY(-3px); box-shadow:var(--shadow); border-color:var(--gold-500); }
+.person img{
+  width:62px; height:62px; border-radius:50%; flex:none;
+  border:2px solid var(--gold-300); background:var(--cream);
+  transition:transform .5s var(--ease-out), border-color .35s var(--ease);
+}
+.person:hover img{ transform:scale(1.05); border-color:var(--gold-500); }
+.person__mono{
+  width:62px; height:62px; border-radius:50%; flex:none;
+  display:grid; place-items:center;
+  background:linear-gradient(150deg,var(--gold-300),var(--gold-500));
+  color:var(--blue-800); font-weight:800; font-size:1.05rem; letter-spacing:.02em;
+  border:2px solid rgba(255,255,255,.7);
+}
+.person__mono--alt{ background:linear-gradient(150deg,#cfdae6,var(--blue-300)); color:var(--blue-800); }
+.person__mono svg{ width:26px; height:26px; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+.person h3{ font-size:1.02rem; margin-bottom:5px; line-height:1.2; }
+.person div{ min-width:0; }
+.person p{ margin:0; font-size:.85rem; line-height:1.45; color:var(--ink-soft); font-weight:600; }
+.person p span{ font-weight:500; opacity:.85; }
+.person__role{
+  margin-top:8px !important; font-size:.8rem !important; font-weight:500 !important;
+  color:var(--gold-900) !important; border-top:1px solid rgba(217,193,146,.5); padding-top:8px;
+}
