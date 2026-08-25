@@ -18,6 +18,7 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"><span></span></div>
 
 <header class="nav" id="nav">
   <div class="nav__inner">
@@ -50,39 +51,50 @@
 <main id="main">
   <section class="hero" id="top">
     <div class="hero__grain" aria-hidden="true"></div>
+    <div class="hero__glow" aria-hidden="true"></div>
     <div class="wrap hero__inner">
       <div class="hero__copy">
-      <p class="kicker">CU Boulder MENV Capstone · SVLH Water Conservancy District</p>
-      <h1 class="hero__title">How much water does <span class="nowrap">St.&nbsp;Vrain&nbsp;Creek</span> need?</h1>
-      <p class="hero__lede">
-        Colorado water law protects whoever claimed the water first — not the creek itself. We surveyed
-        St. Vrain Creek reach by reach to find the minimum flow each stretch needs to stay healthy,
-        and turned it into numbers the District and its partners can act on.
-      </p>
-      <p class="hero__by">Shadia Nagati &amp; Jessica Reid</p>
+        <p class="kicker" data-anim="fade" data-delay="0">CU Boulder MENV Capstone · SVLH Water Conservancy District</p>
+        <h1 class="hero__title" data-anim="lines" data-delay="1">
+          <span class="line"><span>How much water does</span></span>
+          <span class="line"><span class="hl">St.&nbsp;Vrain&nbsp;Creek</span></span>
+          <span class="line"><span>need?</span></span>
+        </h1>
+        <p class="hero__lede" data-anim="fade" data-delay="4">
+          Colorado water law protects whoever claimed the water first — not the creek itself. We surveyed
+          St. Vrain Creek reach by reach to find the minimum flow each stretch needs to stay healthy,
+          and turned it into numbers the District and its partners can act on.
+        </p>
+        <p class="hero__by" data-anim="fade" data-delay="5">Shadia Nagati &amp; Jessica Reid</p>
+        <a class="hero__cta" href="#storymap" data-anim="fade" data-delay="6">
+          <span>See the reaches</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </a>
       </div>
-      <aside class="hero__card">
+      <aside class="hero__card" data-anim="card" data-delay="3">
         <p class="hero__cardlabel">Minimum flow by reach</p>
         <img src="assets/chart-discharge.webp" alt="Bar chart of the discharge meeting the mean-depth criterion for each reach, from Reach 1 to Reach 14" width="1980" height="990" fetchpriority="high">
-        <p class="hero__cardnote"><span>Upstream · Lyons</span><span aria-hidden="true">→</span><span>Downstream · Longmont</span></p>
+        <p class="hero__cardnote"><span>Upstream · Lyons</span><span class="hero__cardarrow" aria-hidden="true"></span><span>Downstream · Longmont</span></p>
       </aside>
-      </div>
-      <div class="wrap">
-      <dl class="stats">
-        <div><dt>Target reaches</dt><dd>14</dd></div>
-        <div><dt>Cross-sections surveyed</dt><dd>20</dd></div>
-        <div><dt>Average minimum flow</dt><dd>~16<span>CFS</span></dd></div>
-        <div><dt>Habitat criteria to pass</dt><dd>2<span>of 3</span></dd></div>
+    </div>
+
+    <div class="wrap">
+      <dl class="stats" data-anim="stats">
+        <div><dt>Target reaches</dt><dd><span class="num" data-count="14">14</span></dd></div>
+        <div><dt>Cross-sections surveyed</dt><dd><span class="num" data-count="20">20</span></dd></div>
+        <div><dt>Average minimum flow</dt><dd>~<span class="num" data-count="16">16</span><span class="unit">CFS</span></dd></div>
+        <div><dt>Habitat criteria to pass</dt><dd><span class="num" data-count="2">2</span><span class="unit">of 3</span></dd></div>
       </dl>
     </div>
+
     <figure class="hero__figure">
-      <img src="assets/hero.webp" alt="St. Vrain Creek running low between grassy banks" width="2000" height="666" fetchpriority="high">
+      <div class="hero__figinner"><img src="assets/hero.webp" alt="St. Vrain Creek running low between grassy banks" width="2000" height="666" fetchpriority="high" data-parallax="0.16"></div>
     </figure>
   </section>
 
   <section class="section" id="storymap">
     <div class="wrap">
-      <p class="eyebrow">Storymap</p>
+      <p class="eyebrow"><i>01</i>Storymap</p>
       <div class="section__head">
         <h2>Fourteen reaches, from Lyons to Longmont</h2>
         <p class="section__intro">
@@ -119,7 +131,7 @@
 
   <section class="section section--cream" id="acknowledgements">
     <div class="wrap wrap--narrow">
-      <p class="eyebrow">Acknowledgements</p>
+      <p class="eyebrow"><i>02</i>Acknowledgements</p>
       <div class="ack">
         <p>We wish to thank <strong>Scott Griebling</strong>, Water Resources Engineer at the St. Vrain and
           Left Hand Water Conservancy District, for his supervision and support during fieldwork and data
@@ -135,7 +147,7 @@
 
   <section class="section" id="data">
     <div class="wrap">
-      <p class="eyebrow">Data</p>
+      <p class="eyebrow"><i>03</i>Data</p>
       <div class="section__head">
         <h2>Survey data</h2>
         <p class="section__intro">Cross-section measurements and modelled discharge for every completed
@@ -172,7 +184,7 @@
 
   <section class="section section--blue" id="reports">
     <div class="wrap">
-      <p class="eyebrow eyebrow--light">Reports</p>
+      <p class="eyebrow eyebrow--light"><i>04</i>Reports</p>
       <div class="section__head">
         <h2 class="h2--light">Deliverables</h2>
         <p class="section__intro section__intro--light">The technical guidance report, policy proposal and
@@ -211,7 +223,7 @@
 
   <section class="section" id="sources">
     <div class="wrap">
-      <p class="eyebrow">Sources</p>
+      <p class="eyebrow"><i>05</i>Sources</p>
       <div class="section__head">
         <h2>References</h2>
         <p class="section__intro">The literature, field manuals and District documents behind the method
@@ -249,7 +261,7 @@
 
   <section class="section section--cream" id="gallery">
     <div class="wrap">
-      <p class="eyebrow">Gallery</p>
+      <p class="eyebrow"><i>06</i>Gallery</p>
       <div class="section__head">
         <h2>In the field</h2>
         <p class="section__intro">Wading, measuring, and re-measuring — twenty cross-sections across a
@@ -277,6 +289,10 @@
     </div>
   </div>
 </footer>
+
+<button class="totop" id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
 
 <div class="lightbox" id="lightbox" hidden>
   <button class="lightbox__close" id="lbClose" aria-label="Close image">

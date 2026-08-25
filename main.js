@@ -1,19 +1,22 @@
-/* Environmental Flow Surveys · St. Vrain Creek — interactions */
+/* Environmental Flow Surveys · St. Vrain Creek — interactions & motion */
 (function () {
   'use strict';
 
-  /* ---------- Gallery ---------- */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasIO  = 'IntersectionObserver' in window;
+
+  /* ---------- Gallery data ---------- */
   var PHOTOS = [
-    { file: 'gal-creek-survey',    w: 1400, h: 1048, alt: 'A surveyor standing mid-channel while measuring a riffle transect',      cap: 'Measuring a riffle transect mid-channel' },
-    { file: 'gal-field-team',      w: 1348, h: 1802, alt: 'Two team members in the creek holding a survey rod',                      cap: 'Shadia and Jessica during a cross-section survey' },
-    { file: 'gal-flow-meter',      w: 837,  h: 1125, alt: 'Hands holding a digital flow meter above the water',                      cap: 'Recording velocity with a flow meter' },
-    { file: 'gal-creek-panorama',  w: 1600, h: 533,  alt: 'Wide view looking downstream along St. Vrain Creek',                      cap: 'Looking downstream along the study reach' },
-    { file: 'gal-survey-level',    w: 678,  h: 900,  alt: 'A team member setting up a survey level on a tripod',                     cap: 'Setting up the survey level' },
-    { file: 'gal-gear-truck',      w: 678,  h: 899,  alt: 'Loading survey equipment from the back of a truck',                       cap: 'Loading gear for a field day' },
-    { file: 'gal-waders',          w: 679,  h: 899,  alt: 'A team member pulling on waders beside the road',                         cap: 'Suiting up before a transect' },
-    { file: 'gal-st-vrain-creek',  w: 554,  h: 554,  alt: 'St. Vrain Creek running shallow over a cobble bar',                       cap: 'Low flow over a cobble bar' },
-    { file: 'gal-team-district',   w: 1400, h: 994,  alt: 'The project team standing with District staff',                           cap: 'The project team with District staff' },
-    { file: 'gal-recreation',      w: 1122, h: 1402, alt: 'People floating the creek in an inflatable tube',                         cap: 'Recreation depends on flow too' }
+    { file: 'gal-creek-survey',   w: 1400, h: 1048, alt: 'A surveyor standing mid-channel while measuring a riffle transect', cap: 'Measuring a riffle transect mid-channel' },
+    { file: 'gal-field-team',     w: 1348, h: 1802, alt: 'Two team members in the creek holding a survey rod',                 cap: 'Shadia and Jessica during a cross-section survey' },
+    { file: 'gal-flow-meter',     w: 837,  h: 1125, alt: 'Hands holding a digital flow meter above the water',                 cap: 'Recording velocity with a flow meter' },
+    { file: 'gal-creek-panorama', w: 1600, h: 533,  alt: 'Wide view looking downstream along St. Vrain Creek',                 cap: 'Looking downstream along the study reach' },
+    { file: 'gal-survey-level',   w: 678,  h: 900,  alt: 'A team member setting up a survey level on a tripod',                cap: 'Setting up the survey level' },
+    { file: 'gal-gear-truck',     w: 678,  h: 899,  alt: 'Loading survey equipment from the back of a truck',                  cap: 'Loading gear for a field day' },
+    { file: 'gal-waders',         w: 679,  h: 899,  alt: 'A team member pulling on waders beside the road',                    cap: 'Suiting up before a transect' },
+    { file: 'gal-st-vrain-creek', w: 554,  h: 554,  alt: 'St. Vrain Creek running shallow over a cobble bar',                  cap: 'Low flow over a cobble bar' },
+    { file: 'gal-team-district',  w: 1400, h: 994,  alt: 'The project team standing with District staff',                      cap: 'The project team with District staff' },
+    { file: 'gal-recreation',     w: 1122, h: 1402, alt: 'People floating the creek in an inflatable tube',                    cap: 'Recreation depends on flow too' }
   ];
 
   var grid = document.getElementById('gallery-grid');
@@ -31,12 +34,12 @@
   }
 
   /* ---------- Lightbox ---------- */
-  var lb      = document.getElementById('lightbox');
-  var lbImg   = document.getElementById('lbImg');
-  var lbCap   = document.getElementById('lbCap');
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lbImg');
+  var lbCap = document.getElementById('lbCap');
   var lbClose = document.getElementById('lbClose');
-  var lbPrev  = document.getElementById('lbPrev');
-  var lbNext  = document.getElementById('lbNext');
+  var lbPrev = document.getElementById('lbPrev');
+  var lbNext = document.getElementById('lbNext');
   var current = -1;
   var lastFocus = null;
 
@@ -101,13 +104,23 @@
     if (lb.hidden) return;
     if (e.key === 'Escape') closeBox();
     if (current < 0) return;
-    if (e.key === 'ArrowLeft')  showPhoto(current - 1);
+    if (e.key === 'ArrowLeft') showPhoto(current - 1);
     if (e.key === 'ArrowRight') showPhoto(current + 1);
   });
 
+  /* swipe on touch */
+  var touchX = null;
+  lb.addEventListener('touchstart', function (e) { touchX = e.changedTouches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    if (touchX === null || current < 0) return;
+    var dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 50) showPhoto(current + (dx < 0 ? 1 : -1));
+    touchX = null;
+  }, { passive: true });
+
   /* ---------- Mobile menu ---------- */
   var toggle = document.getElementById('navToggle');
-  var sheet  = document.getElementById('navSheet');
+  var sheet = document.getElementById('navSheet');
   toggle.addEventListener('click', function () {
     var open = sheet.hidden;
     sheet.hidden = !open;
@@ -127,7 +140,7 @@
     .map(function (a) { return document.querySelector(a.getAttribute('href')); })
     .filter(Boolean);
 
-  if ('IntersectionObserver' in window && sections.length) {
+  if (hasIO && sections.length) {
     var spy = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
@@ -140,23 +153,106 @@
   }
 
   /* ---------- Reveal on scroll ---------- */
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!reduce && 'IntersectionObserver' in window) {
+  if (!reduce && hasIO) {
     document.documentElement.classList.add('js-reveal');
-    var targets = document.querySelectorAll('.section__head, .mapcard, .maprow, .ack, .cards > li, .refs, .gallery');
-    targets.forEach(function (t) { t.classList.add('reveal'); });
-    // failsafe: never leave content hidden
-    setTimeout(function () {
-      targets.forEach(function (t) { t.classList.add('is-in'); });
-    }, 2500);
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry, i) {
+    var targets = document.querySelectorAll(
+      '.section__head, .eyebrow, .mapcard, .maprow > *, .ack, .cards > li, .refs, .gallery, .foot__inner > *'
+    );
+    targets.forEach(function (t) { if (!t.classList.contains('eyebrow')) t.classList.add('reveal'); });
+
+    var revealIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
         var el = entry.target;
-        setTimeout(function () { el.classList.add('is-in'); }, Math.min(i * 45, 180));
-        io.unobserve(el);
+        var siblings = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
+        var delay = el.parentElement && el.parentElement.classList.contains('cards') ? siblings * 90 : 0;
+        setTimeout(function () { el.classList.add('is-in'); }, delay);
+        revealIO.unobserve(el);
       });
-    }, { rootMargin: '0px 0px 0px 0px', threshold: 0.01 });
-    targets.forEach(function (t) { io.observe(t); });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.05 });
+
+    targets.forEach(function (t) { revealIO.observe(t); });
+    setTimeout(function () { targets.forEach(function (t) { t.classList.add('is-in'); }); }, 3500);
+  }
+
+  /* ---------- Hero entrance ---------- */
+  if (!reduce) {
+    document.documentElement.classList.add('js-anim');
+    window.addEventListener('load', function () {
+      document.querySelectorAll('[data-anim]').forEach(function (el) {
+        var d = parseInt(el.getAttribute('data-delay') || '0', 10);
+        setTimeout(function () { el.classList.add('is-in'); }, 90 + d * 110);
+      });
+    });
+    /* safety: if load already fired or is slow */
+    setTimeout(function () {
+      document.querySelectorAll('[data-anim]').forEach(function (el) { el.classList.add('is-in'); });
+    }, 2600);
+  }
+
+  /* ---------- Count-up stats ---------- */
+  var statsEl = document.querySelector('.stats');
+  if (statsEl && !reduce && hasIO) {
+    var counted = false;
+    var countIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting || counted) return;
+        counted = true;
+        statsEl.querySelectorAll('.num').forEach(function (n) {
+          var target = parseFloat(n.getAttribute('data-count'));
+          var start = performance.now();
+          var dur = 1100;
+          function tick(now) {
+            var p = Math.min((now - start) / dur, 1);
+            var eased = 1 - Math.pow(1 - p, 3);
+            n.textContent = String(Math.round(target * eased));
+            if (p < 1) requestAnimationFrame(tick);
+            else n.textContent = n.getAttribute('data-count');
+          }
+          n.textContent = '0';
+          requestAnimationFrame(tick);
+        });
+      });
+    }, { threshold: 0.4 });
+    countIO.observe(statsEl);
+  }
+
+  /* ---------- Scroll-driven: progress bar, nav, parallax, back-to-top ---------- */
+  var bar = document.querySelector('#progress span');
+  var nav = document.getElementById('nav');
+  var toTop = document.getElementById('toTop');
+  var parallaxEls = Array.prototype.slice.call(document.querySelectorAll('[data-parallax]'));
+  var ticking = false;
+
+  function onScroll() {
+    var y = window.scrollY || window.pageYOffset;
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+
+    if (bar) bar.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
+    if (nav) nav.classList.toggle('is-stuck', y > 12);
+    if (toTop) toTop.classList.toggle('is-on', y > window.innerHeight * 0.9);
+
+    if (!reduce) {
+      parallaxEls.forEach(function (el) {
+        var rect = el.getBoundingClientRect();
+        if (rect.bottom < -200 || rect.top > window.innerHeight + 200) return;
+        var speed = parseFloat(el.getAttribute('data-parallax')) || 0.15;
+        var offset = (rect.top - window.innerHeight / 2) * -speed;
+        el.style.transform = 'translate3d(0,' + offset.toFixed(1) + 'px,0)';
+      });
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+  }, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  onScroll();
+
+  if (toTop) {
+    toTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    });
   }
 })();
