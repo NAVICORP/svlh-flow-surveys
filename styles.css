@@ -234,7 +234,13 @@ section[id]{ scroll-margin-top:calc(var(--nav-h) + 16px); }
 
 .hero__figure{ margin:clamp(42px,6vw,76px) 0 0; }
 .hero__figinner{ overflow:hidden; height:clamp(220px,34vw,430px); }
+.hero__figinner picture{ display:block; width:100%; height:100%; }
 .hero__figinner img{ width:100%; height:118%; object-fit:cover; will-change:transform; }
+@media (max-width:760px){
+  /* the wide band crops its own centre on a phone, hiding the surveyor,
+     so a taller frame carries the mobile-specific crop */
+  .hero__figinner{ height:clamp(260px,58vw,340px); }
+}
 
 /* ── Sections ───────────────────────────────────────────── */
 .section{ padding:clamp(60px,8vw,108px) 0; position:relative; }
