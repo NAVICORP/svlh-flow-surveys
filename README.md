@@ -14,7 +14,7 @@ Conservancy District**. It's the destination behind the QR code on the conferenc
 
 | Section | Contents |
 |---|---|
-| Hero | Headline, project framing, key numbers (14 target reaches / 13 surveyed / ~16 CFS / 2-of-3 criteria) and the minimum-flow-by-reach chart - live inline SVG with hover/focus readouts, a bar-rise entrance and a table view |
+| Hero | Headline, project framing and the minimum-flow-by-reach chart - live inline SVG with hover/focus readouts, a bar-rise entrance and a table view |
 | `01` Storymap | Background (32-mile Lyons-Longmont study area, 2013 flood, SMP), reach map (click to open full size), watershed figure, ArcGIS storymap placeholder, and a "How we measured it" method note |
 | `02` Acknowledgements | Thanks text (incl. CWCB / WRA modeling support) plus credit cards for Scott Griebling, Meghan McCarroll and the SMP Flow Advisory Working Group |
 | `03` Data | Three download cards - currently "Coming soon" |
@@ -30,7 +30,7 @@ static files. Manrope is loaded from Google Fonts; everything else is local.
 ```
 index.html          all page content
 styles.css          design tokens (top of file) → components → motion layer
-main.js             gallery + lightbox, mobile menu, scroll spy, reveals, count-up, parallax, hero chart
+main.js             gallery + lightbox, mobile menu, scroll spy, reveals, parallax, hero chart
 assets/             optimized WebP images, logos, icons, OG image
 favicon.svg/.ico    site icons
 site.webmanifest    PWA manifest

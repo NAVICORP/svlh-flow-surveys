@@ -263,33 +263,6 @@
     }
   }
 
-  /* ---------- Count-up stats ---------- */
-  var statsEl = document.querySelector('.stats');
-  if (statsEl && !reduce && hasIO) {
-    var counted = false;
-    var countIO = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting || counted) return;
-        counted = true;
-        statsEl.querySelectorAll('.num').forEach(function (n) {
-          var target = parseFloat(n.getAttribute('data-count'));
-          var start = performance.now();
-          var dur = 1100;
-          function tick(now) {
-            var p = Math.min((now - start) / dur, 1);
-            var eased = 1 - Math.pow(1 - p, 3);
-            n.textContent = String(Math.round(target * eased));
-            if (p < 1) requestAnimationFrame(tick);
-            else n.textContent = n.getAttribute('data-count');
-          }
-          n.textContent = '0';
-          requestAnimationFrame(tick);
-        });
-      });
-    }, { threshold: 0.4 });
-    countIO.observe(statsEl);
-  }
-
   /* ---------- Scroll-driven: progress bar, nav, parallax, back-to-top ---------- */
   var bar = document.querySelector('#progress span');
   var nav = document.getElementById('nav');
