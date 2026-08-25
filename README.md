@@ -19,7 +19,7 @@ Conservancy District**. It's the destination behind the QR code on the conferenc
 | `02` Acknowledgements | Thanks text (incl. CWCB / WRA modeling support) plus credit cards for Scott Griebling, Meghan McCarroll and the SMP Flow Advisory Working Group |
 | `03` Data | Three download cards - currently "Coming soon" |
 | `04` Reports | Minimum Environmental Flow Report (live link) + Policy Brief and stakeholder whitepaper cards |
-| `05` Sources | Full 25-entry reference list |
+| `05` References | Full 25-entry works-cited list |
 | `06` Gallery | Ten field photos with a keyboard-navigable lightbox |
 
 ## Stack
