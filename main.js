@@ -12,7 +12,6 @@
     { file: 'gal-stadia-rod',     w: 1600, h: 1200, alt: 'A surveyor standing mid-channel holding a stadia rod while a second team member reads the level from the bank', cap: 'Holding the stadia rod mid-channel' },
     { file: 'gal-tagline',        w: 1200, h: 1600, alt: 'Three team members standing in the creek recording measurements along a tagline', cap: 'Recording measurements along the tagline' },
     { file: 'gal-flow-meter',     w: 837,  h: 1125, alt: 'Hands holding a digital flow meter above the water',                 cap: 'Recording velocity with a flow meter' },
-    { file: 'gal-creek-panorama', w: 1600, h: 533,  alt: 'Wide view looking downstream along St. Vrain Creek',                 cap: 'Looking downstream along the study reach' },
     { file: 'gal-survey-level',   w: 678,  h: 900,  alt: 'A team member setting up a survey level on a tripod',                cap: 'Setting up the survey level' },
     { file: 'gal-gear-truck',     w: 678,  h: 899,  alt: 'Loading survey equipment from the back of a truck',                  cap: 'Loading gear for a field day' },
     { file: 'gal-waders',         w: 679,  h: 899,  alt: 'A team member pulling on waders beside the road',                    cap: 'Suiting up before a transect' },
