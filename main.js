@@ -191,6 +191,78 @@
     }, 2600);
   }
 
+  /* ---------- Hero flow chart ---------- */
+  var chart = document.querySelector('.fchart');
+  if (chart) {
+    var svg  = chart.querySelector('.fchart__svg');
+    var tip  = document.getElementById('fchartTip');
+    var tipV = tip.querySelector('strong');
+    var tipL = tip.querySelector('span');
+    /* keyed by reach, not by index - reaches 4, 6 and 8 have no bar */
+    var bars = {};
+    svg.querySelectorAll('.fchart__bar').forEach(function (b) {
+      bars[b.getAttribute('data-reach')] = b;
+    });
+    var allBars = Object.keys(bars).map(function (k) { return bars[k]; });
+    var hits = Array.prototype.slice.call(svg.querySelectorAll('.fchart__hit'));
+
+    function show(hit) {
+      var reach = hit.getAttribute('data-reach');
+      chart.classList.add('is-active');
+      allBars.forEach(function (b) {
+        b.classList.toggle('is-hot', b.getAttribute('data-reach') === reach);
+      });
+      /* untrusted-ish labels: set as text, never markup */
+      tipV.textContent = hit.getAttribute('data-value');
+      tipL.textContent = 'Reach ' + hit.getAttribute('data-reach');
+      tip.hidden = false;
+      /* beside the bar, never over it - flips side near the right edge */
+      var cr = chart.getBoundingClientRect(), hr = hit.getBoundingClientRect();
+      var mark = bars[reach] ? bars[reach].getBoundingClientRect() : hr;
+      var cxPx = hr.left - cr.left + hr.width / 2;
+      var flip = cxPx + tip.offsetWidth + 26 > cr.width;
+      tip.classList.toggle('fchart__tip--left', flip);
+      tip.style.left = (cxPx + (flip ? -16 : 16)) + 'px';
+      var ty = mark.top - cr.top + 20;
+      ty = Math.max(tip.offsetHeight / 2 + 2, Math.min(ty, cr.height - tip.offsetHeight / 2 - 2));
+      tip.style.top = ty + 'px';
+    }
+    function hide() {
+      chart.classList.remove('is-active');
+      allBars.forEach(function (b) { b.classList.remove('is-hot'); });
+      tip.hidden = true;
+    }
+
+    hits.forEach(function (h) {
+      h.addEventListener('pointerenter', function () { show(h); });
+      h.addEventListener('focus', function () { show(h); });
+      h.addEventListener('blur', hide);
+    });
+    chart.addEventListener('pointerleave', hide);
+
+    /* bars rise once the card is on screen; failsafe so they never stay flat */
+    /* let the scaleY(0) start state paint for a frame, else the
+       browser jumps straight to the end and there is no motion */
+    function runChart() {
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { chart.classList.add('is-in'); });
+      });
+    }
+    if (!reduce && hasIO) {
+      var chartIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          runChart();
+          chartIO.unobserve(e.target);
+        });
+      }, { threshold: 0.25 });
+      chartIO.observe(chart);
+      setTimeout(runChart, 2600);
+    } else {
+      runChart();
+    }
+  }
+
   /* ---------- Count-up stats ---------- */
   var statsEl = document.querySelector('.stats');
   if (statsEl && !reduce && hasIO) {

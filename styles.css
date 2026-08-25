@@ -566,3 +566,70 @@ section[id]{ scroll-margin-top:calc(var(--nav-h) + 16px); }
   .ack--method{ columns:2; column-gap:44px; }
   .ack--method h3{ column-span:all; }
 }
+
+/* ── Flow chart (hero) ──────────────────────────────────── */
+.hero__cardsub{ font-size:.82rem; color:var(--ink-soft); margin:-6px 0 10px; }
+.fchart{ position:relative; }
+.fchart__svg{ display:block; width:100%; height:auto; overflow:visible; }
+
+.fchart__grid{ stroke:rgba(39,71,101,.13); stroke-width:1; }
+.fchart__ytick,.fchart__xtick,.fchart__axis{
+  font-size:11px; fill:var(--ink-soft); font-variant-numeric:tabular-nums;
+}
+.fchart__axis{ font-size:10px; fill:var(--blue-300); }
+.fchart__xtick--muted{ fill:var(--blue-300); }
+.fchart__nodata{ font-size:9px; fill:var(--blue-300); }
+
+.fchart__bar{ fill:var(--blue-500); transition:fill .25s var(--ease); }
+.fchart__bar--out{ fill:var(--blue-300); }
+.fchart__peak{ font-size:11px; font-weight:700; fill:var(--blue-700); font-variant-numeric:tabular-nums; }
+
+.fchart__avg{ stroke:var(--gold-700); stroke-width:2; stroke-dasharray:6 5; }
+.fchart__avglabel{ font-size:10.5px; font-weight:700; fill:var(--gold-900); }
+
+/* hit targets are the whole band, well past the 24px minimum */
+.fchart__hit{ fill:transparent; cursor:default; }
+.fchart__hit:focus{ outline:none; }
+.fchart__hit:focus-visible{ fill:rgba(49,91,128,.09); }
+.fchart.is-active .fchart__bar{ fill:rgba(49,91,128,.26); }
+.fchart.is-active .fchart__bar--out{ fill:rgba(49,91,128,.26); }
+.fchart .fchart__bar.is-hot,
+.fchart .fchart__bar--out.is-hot{ fill:var(--blue-700); }
+
+.fchart__tip{
+  position:absolute; z-index:3; pointer-events:none;
+  transform:translate(0,-50%); white-space:nowrap;
+  background:var(--blue-800); color:var(--cream);
+  padding:7px 11px; border-radius:var(--radius);
+  box-shadow:0 10px 24px -12px rgba(27,51,80,.8);
+}
+.fchart__tip--left{ transform:translate(-100%,-50%); }
+.fchart__tip strong{ display:block; font-size:.92rem; font-variant-numeric:tabular-nums; }
+.fchart__tip span{ font-size:.72rem; opacity:.78; }
+
+.fchart__table{ margin-top:12px; font-size:.8rem; color:var(--ink-soft); }
+.fchart__table summary{ cursor:pointer; font-weight:700; color:var(--blue-500); }
+.fchart__table table{ width:100%; border-collapse:collapse; margin-top:10px; }
+.fchart__table caption{ text-align:left; padding-bottom:6px; color:var(--ink-soft); }
+.fchart__table th,.fchart__table td{
+  text-align:left; padding:4px 6px; border-bottom:1px solid rgba(217,193,146,.5);
+  font-variant-numeric:tabular-nums; font-weight:500;
+}
+.fchart__table tfoot th,.fchart__table tfoot td{ font-weight:800; color:var(--blue-700); border-bottom:0; }
+
+/* motion: bars rise from the baseline, one after another */
+.js-anim .fchart__bar{ transform:scaleY(0); transform-origin:50% 260px; }
+.js-anim .fchart.is-in .fchart__bar{
+  transform:scaleY(1);
+  transition:transform .85s var(--ease-out);
+  transition-delay:calc(var(--i) * 55ms + 260ms);
+}
+.js-anim .fchart__avg,.js-anim .fchart__avglabel,.js-anim .fchart__peak{ opacity:0; }
+.js-anim .fchart.is-in .fchart__avg,
+.js-anim .fchart.is-in .fchart__avglabel,
+.js-anim .fchart.is-in .fchart__peak{ opacity:1; transition:opacity .5s var(--ease) 1.15s; }
+
+@media (prefers-reduced-motion:reduce){
+  .js-anim .fchart__bar{ transform:none; }
+  .js-anim .fchart__avg,.js-anim .fchart__avglabel,.js-anim .fchart__peak{ opacity:1; }
+}

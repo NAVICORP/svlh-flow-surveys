@@ -14,7 +14,7 @@ Conservancy District**. It's the destination behind the QR code on the conferenc
 
 | Section | Contents |
 |---|---|
-| Hero | Headline, project framing, key numbers (14 target reaches / 13 surveyed / ~16 CFS / 2-of-3 criteria) and the minimum-flow-by-reach chart |
+| Hero | Headline, project framing, key numbers (14 target reaches / 13 surveyed / ~16 CFS / 2-of-3 criteria) and the minimum-flow-by-reach chart - live inline SVG with hover/focus readouts, a bar-rise entrance and a table view |
 | `01` Storymap | Background (32-mile Lyons-Longmont study area, 2013 flood, SMP), reach map (click to open full size), watershed figure, ArcGIS storymap placeholder, and a "How we measured it" method note |
 | `02` Acknowledgements | Thanks text (incl. CWCB / WRA modeling support) plus credit cards for Scott Griebling, Meghan McCarroll and the SMP Flow Advisory Working Group |
 | `03` Data | Three download cards - currently "Coming soon" |
@@ -30,7 +30,7 @@ static files. Manrope is loaded from Google Fonts; everything else is local.
 ```
 index.html          all page content
 styles.css          design tokens (top of file) → components → motion layer
-main.js             gallery + lightbox, mobile menu, scroll spy, reveals, count-up, parallax
+main.js             gallery + lightbox, mobile menu, scroll spy, reveals, count-up, parallax, hero chart
 assets/             optimized WebP images, logos, icons, OG image
 favicon.svg/.ico    site icons
 site.webmanifest    PWA manifest
@@ -71,6 +71,11 @@ Typeface: **Manrope** (400/500/700/800).
 top of `main.js`.
 
 **Update the OG preview image** - replace `assets/og-image.jpg` (1200×630).
+
+**Change the chart numbers** - the bars are inline SVG in `index.html` (`.fchart__svg`), generated
+from the reach/CFS pairs. Each bar and each hit target carries `data-reach`; the hit targets carry
+`data-value`, which is what the tooltip reads. Update the `<table>` inside `<details class="fchart__table">`
+to match - it is the accessible twin and must always agree with the bars.
 
 ## Motion
 
