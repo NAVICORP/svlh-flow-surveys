@@ -7,7 +7,6 @@
 
   /* ---------- Gallery data ---------- */
   var PHOTOS = [
-    { file: 'gal-creek-survey',   w: 1400, h: 1048, alt: 'A surveyor standing mid-channel while measuring a riffle transect', cap: 'Measuring a riffle transect mid-channel' },
     { file: 'gal-field-team',     w: 1348, h: 1802, alt: 'Two team members in the creek holding a survey rod',                 cap: 'Shadia and Jessica during a cross-section survey' },
     { file: 'gal-flow-meter',     w: 837,  h: 1125, alt: 'Hands holding a digital flow meter above the water',                 cap: 'Recording velocity with a flow meter' },
     { file: 'gal-creek-panorama', w: 1600, h: 533,  alt: 'Wide view looking downstream along St. Vrain Creek',                 cap: 'Looking downstream along the study reach' },
