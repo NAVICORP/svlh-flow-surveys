@@ -14,11 +14,11 @@ Conservancy District**. It's the destination behind the QR code on the conferenc
 
 | Section | Contents |
 |---|---|
-| Hero | Headline, project framing, key numbers (14 reaches / 20 cross-sections / ~16 CFS / 2-of-3 criteria) and the minimum-flow-by-reach chart |
-| `01` Storymap | Reach map (click to open full size), watershed figure, placeholder for the ArcGIS storymap link |
-| `02` Acknowledgements | Thanks text plus credit cards for Scott Griebling, Meghan McCarroll and the SMP Flow Advisory Group |
+| Hero | Headline, project framing, key numbers (14 target reaches / 13 surveyed / ~16 CFS / 2-of-3 criteria) and the minimum-flow-by-reach chart |
+| `01` Storymap | Background (32-mile Lyons-Longmont study area, 2013 flood, SMP), reach map (click to open full size), watershed figure, ArcGIS storymap placeholder, and a "How we measured it" method note |
+| `02` Acknowledgements | Thanks text (incl. CWCB / WRA modeling support) plus credit cards for Scott Griebling, Meghan McCarroll and the SMP Flow Advisory Working Group |
 | `03` Data | Three download cards - currently "Coming soon" |
-| `04` Reports | Minimum E-Flow Recommendations (live link) + policy proposal and whitepaper cards |
+| `04` Reports | Minimum Environmental Flow Report (live link) + Policy Brief and stakeholder whitepaper cards |
 | `05` Sources | Full 25-entry reference list |
 | `06` Gallery | Ten field photos with a keyboard-navigable lightbox |
 
@@ -31,7 +31,7 @@ static files. Manrope is loaded from Google Fonts; everything else is local.
 index.html          all page content
 styles.css          design tokens (top of file) → components → motion layer
 main.js             gallery + lightbox, mobile menu, scroll spy, reveals, count-up, parallax
-assets/             optimised WebP images, logos, icons, OG image
+assets/             optimized WebP images, logos, icons, OG image
 favicon.svg/.ico    site icons
 site.webmanifest    PWA manifest
 robots.txt          + sitemap.xml
@@ -98,5 +98,5 @@ a CNAME to `eb3086e5438b2eaa.vercel-dns-017.com` in GoDaddy.
 
 - ArcGIS storymap URL
 - Real data files (spreadsheets / PDFs) for `03 Data`
-- Policy proposal and stakeholder whitepaper for `04 Reports`
+- Policy Brief and stakeholder whitepaper for `04 Reports`
 - Final photo selection for the gallery

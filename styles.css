@@ -545,3 +545,19 @@ section[id]{ scroll-margin-top:calc(var(--nav-h) + 16px); }
   margin-top:8px !important; font-size:.8rem !important; font-weight:500 !important;
   color:var(--gold-900) !important; border-top:1px solid rgba(217,193,146,.5); padding-top:8px;
 }
+
+/* ── Method note (storymap) ─────────────────────────────── */
+.ack--method{ margin-top:28px; }
+.ack--method h3{
+  font-size:1.15rem; color:var(--blue-700); margin-bottom:12px;
+  display:flex; align-items:center; gap:10px;
+}
+.ack--method h3::before{
+  content:""; width:26px; height:3px; border-radius:2px; flex:none;
+  background:linear-gradient(90deg,var(--gold-500),var(--gold-300));
+}
+.ack--method p{ font-size:clamp(.97rem,1.25vw,1.05rem); }
+@media (min-width:900px){
+  .ack--method{ columns:2; column-gap:44px; }
+  .ack--method h3{ column-span:all; }
+}

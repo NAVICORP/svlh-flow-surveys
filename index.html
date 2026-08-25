@@ -74,9 +74,9 @@
           <span class="line"><span>need?</span></span>
         </h1>
         <p class="hero__lede" data-anim="fade" data-delay="4">
-          Colorado water law protects whoever claimed the water first, not the creek itself. We surveyed
-          St. Vrain Creek reach by reach to find the minimum flow each stretch needs to stay healthy,
-          and turned it into numbers the District and its partners can act on.
+          Amid a 25+ year drought, Colorado water managers have to balance water rights and policy with
+          both human and ecosystem needs. We surveyed St. Vrain Creek reach by reach to answer a practical
+          question for the District: how much water does each stretch actually need to thrive?
         </p>
         <p class="hero__by" data-anim="fade" data-delay="5">Shadia Nagati &amp; Jessica Reid</p>
         <a class="hero__cta" href="#storymap" data-anim="fade" data-delay="6">
@@ -94,7 +94,7 @@
     <div class="wrap">
       <dl class="stats" data-anim="stats">
         <div><dt>Target reaches</dt><dd><span class="num" data-count="14">14</span></dd></div>
-        <div><dt>Cross-sections surveyed</dt><dd><span class="num" data-count="20">20</span></dd></div>
+        <div><dt>Reaches surveyed</dt><dd><span class="num" data-count="13">13</span></dd></div>
         <div><dt>Average minimum flow</dt><dd>~<span class="num" data-count="16">16</span><span class="unit">CFS</span></dd></div>
         <div><dt>Habitat criteria to pass</dt><dd><span class="num" data-count="2">2</span><span class="unit">of 3</span></dd></div>
       </dl>
@@ -111,8 +111,11 @@
       <div class="section__head">
         <h2>Fourteen reaches, from Lyons to Longmont</h2>
         <p class="section__intro">
-          Each surveyed reach sits somewhere along the creek's descent out of the foothills. The map below
-          shows every reach and transect in the study; the interactive GIS version goes live with the final report.
+          We focused on the 32-mile section of St. Vrain Creek between Lyons and Longmont, which supplies
+          water to farms, towns and wildlife. After the 2013 flood, the District built a Stream Management
+          Plan to guide the basin's recovery and long-term stream health; these surveys feed straight into it.
+          The map below shows every reach and transect in the study, and the interactive GIS version ships
+          with the final report.
         </p>
       </div>
 
@@ -139,6 +142,17 @@
           <span class="chip chip--wait">Link coming soon</span>
         </div>
       </div>
+
+      <div class="ack ack--method">
+        <h3>How we measured it</h3>
+        <p>We searched for appropriate cross-sections to survey transects across 14 segments, or
+          <strong>reaches</strong>, collecting data in <strong>riffles</strong> - the shallow, fast sections
+          that dry up first when stream supplies decline. Using bankfull width, water surface slope, depth and
+          velocity, we modeled habitat criteria in <strong>R2Cross</strong>, an open-access software program.</p>
+        <p>We completed surveys across 13 of our 14 target reaches; one short reach carried too much backwater
+          flow, with no riffles in which to obtain data. One transect (13A) reached parameters outside R2Cross's
+          capacity and needed extra modeling training from Colorado Water Conservation Board and WRA staff.</p>
+      </div>
     </div>
   </section>
 
@@ -152,7 +166,9 @@
         <p>We also thank the <strong>St. Vrain and Left Hand Water Conservancy District</strong> and the
           <strong>University of Colorado Boulder's Masters of the Environment program</strong> for their
           support of this project.</p>
-        <p>Finally, we thank the members of the <strong>SMP Flow Working Advisory Group</strong> for their
+        <p>We thank the staff of the <strong>Colorado Water Conservation Board</strong> and <strong>WRA</strong>
+          for the additional R2Cross modeling training that made the hardest transects possible.</p>
+        <p>Finally, we thank the members of the <strong>SMP Flow Advisory Working Group</strong> for their
           time and input, which will inform the continued development of this work.</p>
       </div>
     </div>
@@ -180,7 +196,7 @@
             <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><circle cx="16.5" cy="9.5" r="2.6"/><path d="M3.5 19c.4-3 2.7-4.6 5.5-4.6s5.1 1.6 5.5 4.6M15 14.2c2.4.1 4.2 1.6 4.6 4.1"/></svg>
           </span>
           <div>
-            <h3>SMP Flow Advisory Group</h3>
+            <h3>SMP Flow Advisory Working Group</h3>
             <p>Stakeholder working group<br><span>St. Vrain &amp; Left Hand watershed</span></p>
             <p class="person__role">Time and input shaping the recommendations</p>
           </div>
@@ -194,7 +210,7 @@
       <p class="eyebrow"><i>03</i>Data</p>
       <div class="section__head">
         <h2>Survey data</h2>
-        <p class="section__intro">Cross-section measurements and modelled discharge for every completed
+        <p class="section__intro">Cross-section measurements and modeled discharge for every completed
           transect. Files are published here as each reach clears review.</p>
       </div>
       <ul class="cards" role="list">
@@ -231,8 +247,9 @@
       <p class="eyebrow eyebrow--light"><i>04</i>Reports</p>
       <div class="section__head">
         <h2 class="h2--light">Deliverables</h2>
-        <p class="section__intro section__intro--light">The technical guidance report, policy proposal and
-          stakeholder whitepaper follow the final round of surveys in September.</p>
+        <p class="section__intro section__intro--light">Next up: finalize the hydraulic modeling, then present
+          to the SMP Flow Advisory Working Group and at the Sustainable Colorado Watersheds Conference. The
+          report, policy brief and stakeholder whitepaper follow.</p>
       </div>
       <ul class="cards cards--dark" role="list">
         <li class="card card--link">
@@ -240,8 +257,8 @@
             <span class="card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h8l6 6v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>
             </span>
-            <h3>Minimum E-Flow Recommendations<span class="card__arrow" aria-hidden="true">↗</span></h3>
-            <p>Working document: reach-level minimum environmental flow recommendations.</p>
+            <h3>Minimum Environmental Flow Report<span class="card__arrow" aria-hidden="true">↗</span></h3>
+            <p>Reach-level minimum flow recommendations for the District, with an interactive GIS map. Working document.</p>
             <span class="chip chip--live">Open document</span>
           </a>
         </li>
@@ -249,7 +266,7 @@
           <span class="card__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h8l6 6v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M14 3v6h6"/></svg>
           </span>
-          <h3>Policy proposal</h3>
+          <h3>Policy Brief</h3>
           <p>Voluntary agreement and operational tools that could deliver the flows.</p>
           <span class="chip chip--wait">Coming soon</span>
         </li>
@@ -258,7 +275,7 @@
             <svg viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h8l6 6v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M14 3v6h6"/></svg>
           </span>
           <h3>Stakeholder whitepaper</h3>
-          <p>The findings written for the Flow Advisory Group and the wider public.</p>
+          <p>The findings written for the SMP Flow Advisory Working Group and the wider public.</p>
           <span class="chip chip--wait">Coming soon</span>
         </li>
       </ul>
@@ -308,7 +325,7 @@
       <p class="eyebrow"><i>06</i>Gallery</p>
       <div class="section__head">
         <h2>In the field</h2>
-        <p class="section__intro">Wading, measuring, and re-measuring - twenty cross-sections across a
+        <p class="section__intro">Wading, measuring, and re-measuring - thirteen reaches across a
           summer of low water.</p>
       </div>
       <div class="gallery" id="gallery-grid">
@@ -327,7 +344,7 @@
     <div class="foot__text">
       <p class="foot__title">Environmental Flow Surveys for St. Vrain Creek</p>
       <p>A CU Boulder Masters of the Environment capstone with the St. Vrain &amp; Left Hand Water
-         Conservancy District. Findings presented to the SMP Flow Advisory Group and at the
+         Conservancy District. Findings presented to the SMP Flow Advisory Working Group and at the
          Sustainable Colorado Watersheds Conference.</p>
       <p class="foot__meta">Shadia Nagati &amp; Jessica Reid · Partner contact: Scott Griebling, Water Resources Engineer · Faculty advisor: Meghan McCarroll</p>
     </div>
