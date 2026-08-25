@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Environmental Flow Surveys · St. Vrain Creek</title>
+<meta name="description" content="How much water does St. Vrain Creek need? Reach-by-reach environmental flow surveys by Shadia Nagati and Jessica Reid, CU Boulder MENV, with the St. Vrain &amp; Left Hand Water Conservancy District.">
+<meta property="og:title" content="Environmental Flow Surveys · St. Vrain Creek">
+<meta property="og:description" content="Reach-by-reach minimum flow recommendations for St. Vrain Creek — maps, data, reports and field gallery.">
+<meta property="og:image" content="assets/hero.webp">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#274765">
+<link rel="icon" href="assets/logo-svlh.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top">
+      <img src="assets/logo-svlh.webp" alt="St. Vrain &amp; Left Hand Water Conservancy District" width="132" height="89">
+      <span class="nav__brandtext">Environmental Flow Surveys<em>St. Vrain Creek</em></span>
+    </a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#storymap">Storymap</a>
+      <a href="#acknowledgements">Acknowledgements</a>
+      <a href="#data">Data</a>
+      <a href="#reports">Reports</a>
+      <a href="#sources">Sources</a>
+      <a href="#gallery">Gallery</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navSheet" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <div class="nav__sheet" id="navSheet" hidden>
+    <a href="#storymap">Storymap</a>
+    <a href="#acknowledgements">Acknowledgements</a>
+    <a href="#data">Data</a>
+    <a href="#reports">Reports</a>
+    <a href="#sources">Sources</a>
+    <a href="#gallery">Gallery</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="hero__grain" aria-hidden="true"></div>
+    <div class="wrap hero__inner">
+      <div class="hero__copy">
+      <p class="kicker">CU Boulder MENV Capstone · SVLH Water Conservancy District</p>
+      <h1 class="hero__title">How much water does <span class="nowrap">St.&nbsp;Vrain&nbsp;Creek</span> need?</h1>
+      <p class="hero__lede">
+        Colorado water law protects whoever claimed the water first — not the creek itself. We surveyed
+        St. Vrain Creek reach by reach to find the minimum flow each stretch needs to stay healthy,
+        and turned it into numbers the District and its partners can act on.
+      </p>
+      <p class="hero__by">Shadia Nagati &amp; Jessica Reid</p>
+      </div>
+      <aside class="hero__card">
+        <p class="hero__cardlabel">Minimum flow by reach</p>
+        <img src="assets/chart-discharge.webp" alt="Bar chart of the discharge meeting the mean-depth criterion for each reach, from Reach 1 to Reach 14" width="1980" height="990" fetchpriority="high">
+        <p class="hero__cardnote"><span>Upstream · Lyons</span><span aria-hidden="true">→</span><span>Downstream · Longmont</span></p>
+      </aside>
+      </div>
+      <div class="wrap">
+      <dl class="stats">
+        <div><dt>Target reaches</dt><dd>14</dd></div>
+        <div><dt>Cross-sections surveyed</dt><dd>20</dd></div>
+        <div><dt>Average minimum flow</dt><dd>~16<span>CFS</span></dd></div>
+        <div><dt>Habitat criteria to pass</dt><dd>2<span>of 3</span></dd></div>
+      </dl>
+    </div>
+    <figure class="hero__figure">
+      <img src="assets/hero.webp" alt="St. Vrain Creek running low between grassy banks" width="2000" height="666" fetchpriority="high">
+    </figure>
+  </section>
+
+  <section class="section" id="storymap">
+    <div class="wrap">
+      <p class="eyebrow">Storymap</p>
+      <div class="section__head">
+        <h2>Fourteen reaches, from Lyons to Longmont</h2>
+        <p class="section__intro">
+          Each surveyed reach sits somewhere along the creek's descent out of the foothills. The map below
+          shows every reach and transect in the study; the interactive GIS version goes live with the final report.
+        </p>
+      </div>
+
+      <figure class="mapcard">
+        <button class="mapcard__btn" data-lightbox="assets/reach-map-full.webp" data-caption="Figure 1. Environmental flow survey reach details along St. Vrain Creek.">
+          <img src="assets/reach-map.webp" alt="Map of St. Vrain Creek showing the fourteen surveyed reaches between Lyons and Longmont" width="1800" height="1272" loading="lazy">
+          <span class="mapcard__zoom">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5M11 8v6M8 11h6"/></svg>
+            View full map
+          </span>
+        </button>
+        <figcaption><strong>Figure 1.</strong> Environmental flow survey reach details along St. Vrain Creek.</figcaption>
+      </figure>
+
+      <div class="maprow">
+        <figure class="minicard">
+          <img src="assets/watershed.webp" alt="Diagram of the watershed divided into alpine and subalpine, canyons and foothills, transition, and plains" width="576" height="255" loading="lazy">
+          <figcaption><strong>Figure 2.</strong> Upper and lower watershed zones along the study area.</figcaption>
+        </figure>
+        <div class="minicard minicard--note">
+          <h3>Interactive storymap</h3>
+          <p>The ArcGIS storymap will let you walk the creek reach by reach, with photos and flow
+             recommendations at each transect.</p>
+          <span class="chip chip--wait">Link coming soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream" id="acknowledgements">
+    <div class="wrap wrap--narrow">
+      <p class="eyebrow">Acknowledgements</p>
+      <div class="ack">
+        <p>We wish to thank <strong>Scott Griebling</strong>, Water Resources Engineer at the St. Vrain and
+          Left Hand Water Conservancy District, for his supervision and support during fieldwork and data
+          analysis and <strong>Meghan McCarroll</strong>, MENV Advisor, for her guidance throughout this project.</p>
+        <p>We also thank the <strong>St. Vrain and Left Hand Water Conservancy District</strong> and the
+          <strong>University of Colorado Boulder's Masters of the Environment program</strong> for their
+          support of this project.</p>
+        <p>Finally, we thank the members of the <strong>SMP Flow Working Advisory Group</strong> for their
+          time and input, which will inform the continued development of this work.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="data">
+    <div class="wrap">
+      <p class="eyebrow">Data</p>
+      <div class="section__head">
+        <h2>Survey data</h2>
+        <p class="section__intro">Cross-section measurements and modelled discharge for every completed
+          transect. Files are published here as each reach clears review.</p>
+      </div>
+      <ul class="cards" role="list">
+        <li class="card card--wait">
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12M3 15h18"/></svg>
+          </span>
+          <h3>Habitat criteria by reach</h3>
+          <p>Mean depth, wetted perimeter and velocity discharge for each transect.</p>
+          <span class="chip chip--wait">Coming soon</span>
+        </li>
+        <li class="card card--wait">
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h8l6 6v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M14 3v6h6"/></svg>
+          </span>
+          <h3>Cross-section field sheets</h3>
+          <p>Raw R2Cross field measurements, by reach and survey date.</p>
+          <span class="chip chip--wait">Coming soon</span>
+        </li>
+        <li class="card card--wait">
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v6h-6"/></svg>
+          </span>
+          <h3>Discharge summary</h3>
+          <p>Average and median discharge meeting habitat criteria across all reaches.</p>
+          <span class="chip chip--wait">Coming soon</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--blue" id="reports">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--light">Reports</p>
+      <div class="section__head">
+        <h2 class="h2--light">Deliverables</h2>
+        <p class="section__intro section__intro--light">The technical guidance report, policy proposal and
+          stakeholder whitepaper follow the final round of surveys in September.</p>
+      </div>
+      <ul class="cards cards--dark" role="list">
+        <li class="card card--link">
+          <a href="https://docs.google.com/document/u/0/d/17WjV9BHws5-HYTbRhjgINQkHVYQIEM3_jRU3OtigZ8E/edit" target="_blank" rel="noopener">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h8l6 6v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>
+            </span>
+            <h3>Minimum E-Flow Recommendations<span class="card__arrow" aria-hidden="true">↗</span></h3>
+            <p>Working document — reach-level minimum environmental flow recommendations.</p>
+            <span class="chip chip--live">Open document</span>
+          </a>
+        </li>
+        <li class="card card--wait">
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h8l6 6v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M14 3v6h6"/></svg>
+          </span>
+          <h3>Policy proposal</h3>
+          <p>Voluntary agreement and operational tools that could deliver the flows.</p>
+          <span class="chip chip--wait">Coming soon</span>
+        </li>
+        <li class="card card--wait">
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h8l6 6v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M14 3v6h6"/></svg>
+          </span>
+          <h3>Stakeholder whitepaper</h3>
+          <p>The findings written for the Flow Advisory Group and the wider public.</p>
+          <span class="chip chip--wait">Coming soon</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="sources">
+    <div class="wrap">
+      <p class="eyebrow">Sources</p>
+      <div class="section__head">
+        <h2>References</h2>
+        <p class="section__intro">The literature, field manuals and District documents behind the method
+          and the recommendations.</p>
+      </div>
+      <ol class="refs" role="list">
+        <li>Acreman, M. (2016). Environmental flows—basics for novices. <em>WIREs Water, 3</em>(5), 622–628. <a href="https://doi.org/10.1002/wat2.1160" target="_blank" rel="noopener">doi.org/10.1002/wat2.1160</a></li>
+        <li>Acreman, M. C., &amp; Dunbar, M. J. (2004). Defining environmental river flow requirements–a review. <em>Hydrology and Earth System Sciences, 8</em>(5), 861–876. <a href="https://doi.org/10.5194/hess-8-861-2004" target="_blank" rel="noopener">doi.org/10.5194/hess-8-861-2004</a></li>
+        <li>Amos, A. L. (2006). The use of state instream flow laws for federal lands: Respecting state control while meeting federal purposes. <em>Environmental Law, 36</em>(4), 1237–1283.</li>
+        <li>Colorado Division of Water Resources. (n.d.). <em>St. Vrain Creek at Lyons discharge data (SVCLYOCO)</em>. <a href="https://dwr.state.co.us/Tools/Stations/SVCLYOCO" target="_blank" rel="noopener">dwr.state.co.us</a></li>
+        <li>Colorado Water Conservation Board. (2023). <em>Colorado Water Plan</em>. <a href="https://coloradogeologicalsurvey.org/2023/colorado-water-plan-2023/" target="_blank" rel="noopener">coloradogeologicalsurvey.org</a></li>
+        <li>Colorado Water Conservation Board, Stream and Lake Protection Section. (2024). <em>R2Cross field manual</em>. <a href="https://dnrweblink.state.co.us/cwcbsearch/0/edoc/224685/R2Cross%20Field%20Manual%202024.pdf" target="_blank" rel="noopener">dnrweblink.state.co.us</a></li>
+        <li>Griebling, S. (2022). <em>Presentation on the St. Vrain and Left Hand Stream Management Plan</em> [Video]. YouTube. <a href="https://youtu.be/pD5qwy-LKh8" target="_blank" rel="noopener">youtu.be/pD5qwy-LKh8</a></li>
+        <li>Kendy, E., Apse, C., &amp; Blann, K. (2012). <em>A practical guide to environmental flows for policy and planning</em>. The Nature Conservancy.</li>
+        <li>Mason, S. (n.d.). <em>R2Cross overview</em> [Video]. River Network Peer Learning Network.</li>
+        <li>Oikonomou, P. D., Sidhu, R., Wible, T., &amp; Morrison, R. R. (2021). R2Cross: A web-based decision support tool for instream flows. <em>JAWRA, 57</em>(4), 652–660. <a href="https://doi.org/10.1111/1752-1688.12939" target="_blank" rel="noopener">doi.org/10.1111/1752-1688.12939</a></li>
+        <li>Poff, N. L., Allan, J. D., Bain, M. B., Karr, J. R., Prestegaard, K. L., Richter, B. D., Sparks, R. E., &amp; Stromberg, J. C. (1997). The natural flow regime. <em>BioScience, 47</em>(11), 769–784.</li>
+        <li>Poff, N. L., Richter, B. D., Arthington, A. H., Bunn, S. E., Naiman, R. J., Apse, C., Kendy, E., et al. (2010). The ecological limits of hydrologic alteration (ELOHA). <em>Freshwater Biology, 55</em>(1), 147–170. <a href="https://doi.org/10.1111/j.1365-2427.2009.02204.x" target="_blank" rel="noopener">doi.org/10.1111/j.1365-2427.2009.02204.x</a></li>
+        <li>River Network. (2021). <em>Stream management plans in Colorado: Progress at five years</em>. CWCB Watershed &amp; Flood Protection Section.</li>
+        <li>River Network. (2022, November 9). <em>Stream management plans 101</em> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=94NxuAikmEs" target="_blank" rel="noopener">youtube.com</a></li>
+        <li>River Network. (2023). <em>Flow recommendations in SMPs – Opportunity analysis</em>. River Network &amp; CWCB.</li>
+        <li>River Network &amp; Colorado Water Conservation Board. (2019). <em>St. Vrain and Left Hand Stream Management Plan</em> [Case study summary]. <a href="https://coloradosmp.org/wp-content/uploads/2019/02/SVLH_Summary_web.pdf" target="_blank" rel="noopener">coloradosmp.org</a></li>
+        <li>River Network &amp; Colorado Water Conservation Board. (2024). <em>Watershed planning prioritization tool</em> [Interactive map]. <a href="https://www.coloradosmp.org/watershed-planning-prioritization/" target="_blank" rel="noopener">coloradosmp.org</a></li>
+        <li>St. Vrain &amp; Left Hand Water Conservancy District. (2020). <em>Stream management plan: Phase I summary report</em>. <a href="https://svlh.gov/our-plan-in-action/stream-management-plan/" target="_blank" rel="noopener">svlh.gov</a></li>
+        <li>St. Vrain &amp; Left Hand Water Conservancy District. (2024). <em>Stream management plan: Phase I progress update</em>. <a href="https://svlh.gov/our-plan-in-action/stream-management-plan/" target="_blank" rel="noopener">svlh.gov</a></li>
+        <li>St. Vrain &amp; Left Hand Water Conservancy District. (2025). <em>SMP implementation priority initiatives report</em>.</li>
+        <li>St. Vrain &amp; Left Hand Water Conservancy District. (2025). <em>District Water Plan: 2024 progress update</em>.</li>
+        <li>St. Vrain &amp; Left Hand Water Conservancy District. (2025). <em>Environmental flow surveys for St. Vrain Creek</em> [MENV capstone project proposal].</li>
+        <li>U.S. Environmental Protection Agency. (n.d.). <em>Definition and characteristics of low flows</em>. <a href="https://www.epa.gov/hydrowq/definition-and-characteristics-low-flows" target="_blank" rel="noopener">epa.gov</a></li>
+        <li>Wineland, S. M., Başağaoğlu, H., Fleming, J., Friedman, J., Garza-Diaz, L., Kellogg, W., … Wootten, A. M. (2022). The environmental flows implementation challenge. <em>WIREs Water, 9</em>(1), e1565. <a href="https://doi.org/10.1002/wat2.1565" target="_blank" rel="noopener">doi.org/10.1002/wat2.1565</a></li>
+        <li>Zellmer, S. B., &amp; Amos, A. L. (2026). <em>Water law in a nutshell</em> (7th ed.). West Academic Publishing.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--cream" id="gallery">
+    <div class="wrap">
+      <p class="eyebrow">Gallery</p>
+      <div class="section__head">
+        <h2>In the field</h2>
+        <p class="section__intro">Wading, measuring, and re-measuring — twenty cross-sections across a
+          summer of low water.</p>
+      </div>
+      <div class="gallery" id="gallery-grid">
+        <!-- populated by main.js from a manifest so captions stay in one place -->
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <div class="foot__logos">
+      <img src="assets/logo-svlh.webp" alt="St. Vrain &amp; Left Hand Water Conservancy District" width="150" height="101" loading="lazy">
+      <img class="foot__menv" src="assets/logo-menv.webp" alt="University of Colorado Boulder Masters of the Environment" width="240" height="40" loading="lazy">
+    </div>
+    <div class="foot__text">
+      <p class="foot__title">Environmental Flow Surveys for St. Vrain Creek</p>
+      <p>A CU Boulder Masters of the Environment capstone with the St. Vrain &amp; Left Hand Water
+         Conservancy District. Findings presented to the SMP Flow Advisory Group and at the
+         Sustainable Colorado Watersheds Conference.</p>
+      <p class="foot__meta">Shadia Nagati &amp; Jessica Reid · Partner contact: Scott Griebling, Water Resources Engineer · Faculty advisor: Meghan McCarroll</p>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox__close" id="lbClose" aria-label="Close image">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Previous image">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+  </button>
+  <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Next image">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+  </button>
+  <figure class="lightbox__figure">
+    <img id="lbImg" src="" alt="">
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
