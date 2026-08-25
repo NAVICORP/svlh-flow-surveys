@@ -16,7 +16,7 @@
     { file: 'gal-gear-truck',     w: 678,  h: 899,  alt: 'Loading survey equipment from the back of a truck',                  cap: 'Loading gear for a field day' },
     { file: 'gal-waders',         w: 679,  h: 899,  alt: 'A team member pulling on waders beside the road',                    cap: 'Suiting up before a transect' },
     { file: 'gal-st-vrain-creek', w: 554,  h: 554,  alt: 'St. Vrain Creek running shallow over a cobble bar',                  cap: 'Low flow over a cobble bar' },
-    { file: 'gal-team-district',  w: 1400, h: 994,  alt: 'The project team standing with District staff',                      cap: 'The project team with District staff' },
+    { file: 'gal-team-district',  w: 1400, h: 994,  alt: 'The project team standing with Scott Griebling',                     cap: 'The project team with Scott Griebling' },
     { file: 'gal-recreation',     w: 1122, h: 1402, alt: 'People floating the creek in an inflatable tube',                    cap: 'Recreation depends on flow too' }
   ];
 
