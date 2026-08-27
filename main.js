@@ -7,12 +7,11 @@
 
   /* ---------- Gallery data ---------- */
   var PHOTOS = [
-    { file: 'gal-three-hill', w: 360, h: 480, alt: 'Shadia, Jessica and Meghan standing together on a hillside at sunset', cap: 'Shadia, Jessica and Meghan' },
+    { file: 'gal-field-team', w: 1348, h: 1802, alt: 'Two team members in the creek holding a survey rod', cap: 'Shadia and Jessica during a cross-section survey' },
+    { file: 'gal-early-start', w: 1200, h: 1600, alt: 'Two team members smiling at dawn before a survey day', cap: 'An early start' },
     { file: 'gal-skull', w: 1200, h: 1600, alt: 'A team member holding a small animal skull found beside the creek', cap: 'A skull found streamside' },
     { file: 'gal-sunrise', w: 1600, h: 1200, alt: 'Sunrise over St. Vrain Creek with an orange sky reflected in the water', cap: 'Sunrise over the creek' },
     { file: 'gal-gear-packed', w: 768, h: 1024, alt: 'Survey equipment packed into the boot of a red Mini', cap: 'Gear packed for a field day' },
-    { file: 'gal-early-start', w: 1200, h: 1600, alt: 'Two team members smiling at dawn before a survey day', cap: 'An early start' },
-    { file: 'gal-field-team', w: 1348, h: 1802, alt: 'Two team members in the creek holding a survey rod', cap: 'Shadia and Jessica during a cross-section survey' },
     { file: 'gal-team-district', w: 1400, h: 994, alt: 'The project team standing with Scott Griebling', cap: 'The project team with Scott Griebling' },
     { file: 'gal-set-transect', w: 1600, h: 1200, alt: 'Two team members setting up a transect line across the creek', cap: 'Setting the transect' },
     { file: 'gal-level-pair', w: 1200, h: 1600, alt: 'Two team members working with a survey level on a tripod beside the creek', cap: 'Reading the level' },
@@ -32,6 +31,7 @@
     { file: 'gal-suited-up', w: 1200, h: 1600, alt: 'A team member in a high-visibility vest and sunglasses before a survey', cap: 'Suited up for a survey day' },
     { file: 'gal-field-notes', w: 1200, h: 1600, alt: 'A team member holding a clipboard of field notes beside the creek', cap: 'Field notes between transects' },
     { file: 'gal-above-valley', w: 1200, h: 1600, alt: 'Two team members on a hillside above the valley', cap: 'Above the valley' },
+    { file: 'gal-three-hill', w: 360, h: 480, alt: 'Shadia, Jessica and Meghan standing together on a hillside at sunset', cap: 'Shadia, Jessica and Meghan' },
     { file: 'gal-drive-out', w: 1600, h: 1200, alt: 'View through a windscreen driving a dirt track out to a survey reach', cap: 'The drive out to a reach' },
     { file: 'gal-storm-light', w: 1200, h: 1600, alt: 'The creek running under a heavy storm sky', cap: 'Storm light over the study reach' },
     { file: 'gal-cottonwoods', w: 1600, h: 1200, alt: 'St. Vrain Creek running below a stand of cottonwoods', cap: 'Below the cottonwoods' },
