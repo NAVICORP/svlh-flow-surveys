@@ -16,7 +16,6 @@
     { file: 'gal-set-transect', w: 1600, h: 1200, alt: 'Two team members setting up a transect line across the creek', cap: 'Setting the transect' },
     { file: 'gal-level-pair', w: 1200, h: 1600, alt: 'Two team members working with a survey level on a tripod beside the creek', cap: 'Reading the level' },
     { file: 'gal-rod-waterline', w: 1600, h: 1200, alt: 'A team member standing mid-creek holding a stadia rod at the waterline', cap: 'Holding the rod at the waterline' },
-    { file: 'gal-stadia-rod', w: 1600, h: 1200, alt: 'A surveyor standing mid-channel holding a stadia rod while a second team member reads the level from the bank', cap: 'Holding the stadia rod mid-channel' },
     { file: 'gal-rod-canyon', w: 1600, h: 1200, alt: 'A team member standing in the creek holding the stadia rod on a transect tape, with a second team member on the survey level upstream and a canyon wall behind', cap: 'Holding the rod on the transect' },
     { file: 'gal-level-yellow', w: 1200, h: 1600, alt: 'Close-up of the bubble level on the yellow survey instrument', cap: 'Levelling the instrument' },
     { file: 'gal-datasheet', w: 1200, h: 1600, alt: 'A hand holding a pen over a cross-section datasheet, with a team member working the tagline in the creek behind', cap: 'Logging measurements' },
