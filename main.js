@@ -12,7 +12,6 @@
     { file: 'gal-sunrise', w: 1600, h: 1200, alt: 'Sunrise over St. Vrain Creek with an orange sky reflected in the water', cap: 'Sunrise over the creek' },
     { file: 'gal-gear-packed', w: 768, h: 1024, alt: 'Survey equipment packed into the boot of a red Mini', cap: 'Gear packed for a field day' },
     { file: 'gal-early-start', w: 1200, h: 1600, alt: 'Two team members smiling at dawn before a survey day', cap: 'An early start' },
-    { file: 'gal-team-transect', w: 1600, h: 1200, alt: 'Two team members in high-visibility vests standing with a survey rod beside the creek', cap: 'Shadia and Jessica at a survey transect' },
     { file: 'gal-field-team', w: 1348, h: 1802, alt: 'Two team members in the creek holding a survey rod', cap: 'Shadia and Jessica during a cross-section survey' },
     { file: 'gal-team-district', w: 1400, h: 994, alt: 'The project team standing with Scott Griebling', cap: 'The project team with Scott Griebling' },
     { file: 'gal-set-transect', w: 1600, h: 1200, alt: 'Two team members setting up a transect line across the creek', cap: 'Setting the transect' },
