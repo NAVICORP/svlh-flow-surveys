@@ -4,7 +4,7 @@ Landing page for the reach-by-reach environmental flow survey of St. Vrain Creek
 MENV capstone by **Shadia Nagati & Jessica Reid** with the **St. Vrain & Left Hand Water
 Conservancy District**. It's the destination behind the QR code on the conference poster.
 
-**Live:** https://jessica.skifi.co · **Mirror:** https://svlh-flow-surveys.vercel.app
+**Live:** https://www.svlhmenv.com · **Staging:** https://jessica.skifi.co · **Mirror:** https://svlh-flow-surveys.vercel.app
 
 ![Environmental Flow Surveys for St. Vrain Creek](assets/og-image.jpg)
 
@@ -96,7 +96,8 @@ The repo is connected to Vercel: **any push to `main` deploys automatically.** N
 and no output directory; Vercel serves the root as static files.
 
 To point a new domain at it: add the domain in Vercel → Project → Settings → Domains, then add a
-`CNAME` at the registrar pointing the subdomain to the value Vercel shows. `jessica.skifi.co` uses
+`CNAME` at the registrar pointing the name to the value Vercel shows. `www.svlhmenv.com` is the primary
+domain (the apex redirects to it) and is what the canonical, OG and sitemap URLs point at. `jessica.skifi.co` uses
 a CNAME to `eb3086e5438b2eaa.vercel-dns-017.com` in GoDaddy.
 
 ## Still to come

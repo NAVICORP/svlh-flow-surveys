@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jessica.skifi.co/sitemap.xml
+Sitemap: https://www.svlhmenv.com/sitemap.xml
