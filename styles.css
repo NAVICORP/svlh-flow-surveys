@@ -588,6 +588,11 @@ section[id]{ scroll-margin-top:calc(var(--nav-h) + 16px); }
 .fchart__tip strong{ display:block; font-size:.92rem; font-variant-numeric:tabular-nums; }
 .fchart__tip span{ font-size:.72rem; opacity:.78; }
 
+.hero__cardfoot{
+  margin:10px 0 0; padding-top:10px; font-size:.78rem; line-height:1.5;
+  color:var(--ink-soft); border-top:1px solid rgba(217,193,146,.55);
+}
+.hero__cardfoot b{ color:var(--blue-700); font-weight:800; }
 .fchart__table{ margin-top:12px; font-size:.8rem; color:var(--ink-soft); }
 .fchart__table summary{ cursor:pointer; font-weight:700; color:var(--blue-500); }
 .fchart__table table{ width:100%; border-collapse:collapse; margin-top:10px; }
