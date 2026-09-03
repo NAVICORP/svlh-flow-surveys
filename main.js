@@ -277,7 +277,8 @@
         });
       }, { threshold: 0.25 });
       chartIO.observe(chart);
-      setTimeout(runChart, 2600);
+      /* failsafe: add the class directly - rAF is frozen in a background tab */
+      setTimeout(function () { chart.classList.add('is-in'); }, 2600);
     } else {
       runChart();
     }
