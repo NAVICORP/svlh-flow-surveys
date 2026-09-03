@@ -574,8 +574,10 @@ section[id]{ scroll-margin-top:calc(var(--nav-h) + 16px); }
 .fchart__hit:focus-visible{ fill:rgba(49,91,128,.09); }
 .fchart.is-active .fchart__bar{ fill:rgba(49,91,128,.26); }
 .fchart.is-active .fchart__bar--out{ fill:rgba(49,91,128,.26); }
+.fchart.is-active .fchart__bar--prelim{ fill:rgba(49,91,128,.30); }
 .fchart .fchart__bar.is-hot,
 .fchart .fchart__bar--out.is-hot{ fill:var(--blue-700); }
+.fchart .fchart__bar--prelim.is-hot{ fill:var(--blue-700); }
 
 .fchart__tip{
   position:absolute; z-index:3; pointer-events:none;
@@ -645,3 +647,5 @@ section[id]{ scroll-margin-top:calc(var(--nav-h) + 16px); }
   .dt{ font-size:14px; }
   .dt thead th, .dt tbody th, .dt tbody td{ padding:9px 12px; }
 }
+
+.fchart__bar--prelim{ fill:#5B87AB; }
