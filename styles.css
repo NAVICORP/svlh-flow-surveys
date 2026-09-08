@@ -680,11 +680,11 @@ section[id]{ scroll-margin-top:calc(var(--nav-h) + 16px); }
   transform:translateY(-50%);
   background:var(--blue-700); color:var(--cream);
   padding:7px 11px; border-radius:10px; box-shadow:var(--shadow-s);
-  white-space:nowrap;
+  white-space:normal; max-width:190px; line-height:1.35;
 }
 .bwchart__tip--left{ transform:translate(-100%,-50%); }
 .bwchart__tip strong{ display:block; font-size:.92rem; font-variant-numeric:tabular-nums; }
-.bwchart__tip span{ font-size:.72rem; opacity:.78; }
+.bwchart__tip span{ display:block; margin-top:3px; font-size:.72rem; opacity:.78; }
 
 .js-anim .bwchart__box{ transform:scaleY(0); transform-origin:50% 260px; }
 .js-anim .bwchart.is-in .bwchart__box{
