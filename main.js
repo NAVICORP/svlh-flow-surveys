@@ -323,3 +323,60 @@
     });
   }
 })();
+
+/* ---------- Hero box-and-whisker chart ---------- */
+(function () {
+  var bw = document.querySelector('.bwchart');
+  if (!bw) return;
+  var svg  = bw.querySelector('.bwchart__svg');
+  var tip  = document.getElementById('bwchartTip');
+  var tipV = tip.querySelector('strong');
+  var tipL = tip.querySelector('span');
+  var boxes = Array.prototype.slice.call(svg.querySelectorAll('.bwchart__box'));
+  var hits  = Array.prototype.slice.call(svg.querySelectorAll('.bwchart__hit'));
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function show(hit, i) {
+    bw.classList.add('is-active');
+    boxes.forEach(function (b, j) { b.classList.toggle('is-hot', j === i); });
+    /* untrusted-ish labels: set as text, never markup */
+    tipV.textContent = 'Median ' + hit.getAttribute('data-median') + ' CFS';
+    tipL.textContent = hit.getAttribute('data-crit') + ' · middle half ' +
+                       hit.getAttribute('data-iqr') + ' · range ' + hit.getAttribute('data-range');
+    tip.hidden = false;
+    var cr = bw.getBoundingClientRect(), hr = hit.getBoundingClientRect();
+    var cxPx = hr.left - cr.left + hr.width / 2;
+    var flip = cxPx + tip.offsetWidth + 26 > cr.width;
+    tip.classList.toggle('bwchart__tip--left', flip);
+    tip.style.left = (cxPx + (flip ? -16 : 16)) + 'px';
+    var ty = hr.top - cr.top + 34;
+    ty = Math.max(tip.offsetHeight / 2 + 2, Math.min(ty, cr.height - tip.offsetHeight / 2 - 2));
+    tip.style.top = ty + 'px';
+  }
+  function hide() {
+    bw.classList.remove('is-active');
+    boxes.forEach(function (b) { b.classList.remove('is-hot'); });
+    tip.hidden = true;
+  }
+  hits.forEach(function (h, i) {
+    h.addEventListener('pointerenter', function () { show(h, i); });
+    h.addEventListener('focus', function () { show(h, i); });
+    h.addEventListener('blur', hide);
+  });
+  bw.addEventListener('pointerleave', hide);
+
+  function run() {
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { bw.classList.add('is-in'); });
+    });
+  }
+  if (!reduce && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { run(); io.disconnect(); } });
+    }, { threshold: .25 });
+    io.observe(bw);
+    setTimeout(run, 2600);
+  } else {
+    bw.classList.add('is-in');
+  }
+})();
