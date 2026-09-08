@@ -649,3 +649,48 @@ section[id]{ scroll-margin-top:calc(var(--nav-h) + 16px); }
 }
 
 .fchart__bar--prelim{ fill:#5B87AB; }
+
+/* ── Hero box-and-whisker: flow by habitat criterion ───────── */
+.hero__carddiv{
+  border:0; border-top:1px solid rgba(39,71,101,.12);
+  margin:22px 0 20px;
+}
+.bwchart{ position:relative; }
+.bwchart__svg{ display:block; width:100%; height:auto; overflow:visible; }
+.bwchart__grid{ stroke:rgba(39,71,101,.13); stroke-width:1; }
+.bwchart__ytick,.bwchart__xtick,.bwchart__axis{
+  font-size:10.5px; font-weight:600; fill:var(--ink-soft);
+  font-variant-numeric:tabular-nums;
+}
+.bwchart__axis{ font-size:10px; fill:var(--blue-300); }
+.bwchart__rect{ fill:var(--blue-500); fill-opacity:.85; }
+.bwchart__box--wet .bwchart__rect{ fill:var(--gold-500); }
+.bwchart__box--vel .bwchart__rect{ fill:#7C9E6B; }
+.bwchart__whisk,.bwchart__cap{ stroke:var(--blue-300); stroke-width:1.5; }
+.bwchart__box--wet .bwchart__whisk,.bwchart__box--wet .bwchart__cap{ stroke:var(--gold-700); }
+.bwchart__box--vel .bwchart__whisk,.bwchart__box--vel .bwchart__cap{ stroke:#5F7F51; }
+.bwchart__med{ stroke:var(--cream); stroke-width:2.5; }
+.bwchart__hit{ fill:transparent; cursor:default; }
+.bwchart__hit:focus{ outline:none; }
+.bwchart__hit:focus-visible{ fill:rgba(49,91,128,.09); }
+.bwchart.is-active .bwchart__box{ opacity:.34; transition:opacity .25s var(--ease); }
+.bwchart.is-active .bwchart__box.is-hot{ opacity:1; }
+.bwchart__tip{
+  position:absolute; z-index:3; pointer-events:none;
+  transform:translateY(-50%);
+  background:var(--blue-700); color:var(--cream);
+  padding:7px 11px; border-radius:10px; box-shadow:var(--shadow-s);
+  white-space:nowrap;
+}
+.bwchart__tip--left{ transform:translate(-100%,-50%); }
+.bwchart__tip strong{ display:block; font-size:.92rem; font-variant-numeric:tabular-nums; }
+.bwchart__tip span{ font-size:.72rem; opacity:.78; }
+
+.js-anim .bwchart__box{ transform:scaleY(0); transform-origin:50% 260px; }
+.js-anim .bwchart.is-in .bwchart__box{
+  transform:scaleY(1);
+  transition:transform .72s var(--ease-out) calc(var(--i) * .09s);
+}
+@media (prefers-reduced-motion:reduce){
+  .js-anim .bwchart__box{ transform:none; }
+}
