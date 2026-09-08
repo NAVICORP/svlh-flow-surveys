@@ -87,6 +87,61 @@
         </a>
       </div>
       <aside class="hero__card" data-anim="card" data-delay="3">
+        <p class="hero__cardlabel">Flow needed, by habitat criterion</p>
+        <p class="hero__cardsub">Discharge required to meet each of the three R2Cross criteria, across every surveyed transect</p>
+        <div class="bwchart" role="list">
+          <svg class="bwchart__svg" viewBox="0 0 640 300" role="img" preserveAspectRatio="xMidYMid meet"
+               aria-label="Box and whisker chart of the discharge required to meet each of the three R2Cross habitat criteria across all surveyed transects">
+          <line class="bwchart__grid" x1="40" y1="260.0" x2="628" y2="260.0"/>
+          <text class="bwchart__ytick" x="32" y="264.0" text-anchor="end">0</text>
+          <line class="bwchart__grid" x1="40" y1="217.5" x2="628" y2="217.5"/>
+          <text class="bwchart__ytick" x="32" y="221.5" text-anchor="end">10</text>
+          <line class="bwchart__grid" x1="40" y1="174.9" x2="628" y2="174.9"/>
+          <text class="bwchart__ytick" x="32" y="178.9" text-anchor="end">20</text>
+          <line class="bwchart__grid" x1="40" y1="132.4" x2="628" y2="132.4"/>
+          <text class="bwchart__ytick" x="32" y="136.4" text-anchor="end">30</text>
+          <line class="bwchart__grid" x1="40" y1="89.8" x2="628" y2="89.8"/>
+          <text class="bwchart__ytick" x="32" y="93.8" text-anchor="end">40</text>
+          <line class="bwchart__grid" x1="40" y1="47.3" x2="628" y2="47.3"/>
+          <text class="bwchart__ytick" x="32" y="51.3" text-anchor="end">50</text>
+          <text class="bwchart__axis" transform="translate(11,143.0) rotate(-90)" text-anchor="middle">CFS</text>
+          <g class="bwchart__box bwchart__box--depth" style="--i:0">
+            <line class="bwchart__whisk" x1="145" y1="98.6" x2="145" y2="158.1"/>
+            <line class="bwchart__whisk" x1="145" y1="225.2" x2="145" y2="254.0"/>
+            <line class="bwchart__cap" x1="123" y1="98.6" x2="167" y2="98.6"/>
+            <line class="bwchart__cap" x1="123" y1="254.0" x2="167" y2="254.0"/>
+            <rect class="bwchart__rect" x="93.0" y="158.1" width="104" height="67.1" rx="5"/>
+            <line class="bwchart__med" x1="93.0" y1="205.6" x2="197.0" y2="205.6"/>
+          </g>
+          <text class="bwchart__xtick" x="145" y="278" text-anchor="middle">Mean depth</text>
+          <g class="bwchart__box bwchart__box--wet" style="--i:1">
+            <line class="bwchart__whisk" x1="320" y1="41.0" x2="320" y2="158.2"/>
+            <line class="bwchart__whisk" x1="320" y1="254.0" x2="320" y2="258.0"/>
+            <line class="bwchart__cap" x1="298" y1="41.0" x2="342" y2="41.0"/>
+            <line class="bwchart__cap" x1="298" y1="258.0" x2="342" y2="258.0"/>
+            <rect class="bwchart__rect" x="268.0" y="158.2" width="104" height="95.8" rx="5"/>
+            <line class="bwchart__med" x1="268.0" y1="215.3" x2="372.0" y2="215.3"/>
+          </g>
+          <text class="bwchart__xtick" x="320" y="278" text-anchor="middle">% wetted perimeter</text>
+          <g class="bwchart__box bwchart__box--vel" style="--i:2">
+            <line class="bwchart__whisk" x1="495" y1="146.2" x2="495" y2="202.6"/>
+            <line class="bwchart__whisk" x1="495" y1="239.1" x2="495" y2="254.8"/>
+            <line class="bwchart__cap" x1="473" y1="146.2" x2="517" y2="146.2"/>
+            <line class="bwchart__cap" x1="473" y1="254.8" x2="517" y2="254.8"/>
+            <rect class="bwchart__rect" x="443.0" y="202.6" width="104" height="36.5" rx="5"/>
+            <line class="bwchart__med" x1="443.0" y1="219.9" x2="547.0" y2="219.9"/>
+          </g>
+          <text class="bwchart__xtick" x="495" y="278" text-anchor="middle">Mean velocity</text>
+          <rect class="bwchart__hit" x="58" y="26" width="174" height="234" tabindex="0" role="listitem" data-crit="Mean depth" data-median="12.8" data-iqr="8.2-24.0 CFS" data-range="1.4-37.9 CFS" data-n="26" aria-label="Mean depth: median 12.8 CFS, middle half 8.2 to 24.0, full range 1.4 to 37.9, 26 transects"/>
+          <rect class="bwchart__hit" x="233" y="26" width="174" height="234" tabindex="0" role="listitem" data-crit="% wetted perimeter" data-median="10.5" data-iqr="1.4-23.9 CFS" data-range="0.5-51.5 CFS" data-n="26" aria-label="% wetted perimeter: median 10.5 CFS, middle half 1.4 to 23.9, full range 0.5 to 51.5, 26 transects"/>
+          <rect class="bwchart__hit" x="408" y="26" width="174" height="234" tabindex="0" role="listitem" data-crit="Mean velocity" data-median="9.4" data-iqr="4.9-13.5 CFS" data-range="1.2-26.8 CFS" data-n="27" aria-label="Mean velocity: median 9.4 CFS, middle half 4.9 to 13.5, full range 1.2 to 26.8, 27 transects"/>
+          </svg>
+          <div class="bwchart__tip" id="bwchartTip" role="status" aria-live="polite" hidden>
+            <strong></strong><span></span>
+          </div>
+        </div>
+        <p class="hero__cardfoot"><b>Box</b> = the middle half of the recommendations, with the median marked inside. <b>Whiskers</b> = the full range across the Creek.</p>
+        <hr class="hero__carddiv">
         <p class="hero__cardlabel">Minimum flow by reach</p>
         <p class="hero__cardsub">Discharge at which at least 2 of 3 habitat criteria are met</p>
         <div class="fchart" role="list">
