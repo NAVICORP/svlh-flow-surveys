@@ -334,11 +334,13 @@
   var tipL = tip.querySelector('span');
   var boxes = Array.prototype.slice.call(svg.querySelectorAll('.bwchart__box'));
   var hits  = Array.prototype.slice.call(svg.querySelectorAll('.bwchart__hit'));
+  var dots  = Array.prototype.slice.call(svg.querySelectorAll('.bwchart__dots'));
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function show(hit, i) {
     bw.classList.add('is-active');
     boxes.forEach(function (b, j) { b.classList.toggle('is-hot', j === i); });
+    dots.forEach(function (d, j) { d.classList.toggle('is-hot', j === i); });
     /* untrusted-ish labels: set as text, never markup */
     tipV.textContent = 'Median ' + hit.getAttribute('data-median') + ' CFS';
     tipL.textContent = hit.getAttribute('data-crit') + ' · middle half ' +
@@ -356,6 +358,7 @@
   function hide() {
     bw.classList.remove('is-active');
     boxes.forEach(function (b) { b.classList.remove('is-hot'); });
+    dots.forEach(function (d) { d.classList.remove('is-hot'); });
     tip.hidden = true;
   }
   hits.forEach(function (h, i) {
